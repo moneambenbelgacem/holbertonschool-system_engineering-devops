@@ -1,0 +1,21 @@
+        User
+          |
+     [Internet]
+          |
+      DNS Server
+          |
+          V
+   Domain Name: foobar.com
+   (www record: 8.8.8.8)
+          |
+          V
+    Nginx Web Server
+          |
+          V
+   Application Server
+          |
+          V
+     MySQL Database
+          |
+          V
+    Application Files

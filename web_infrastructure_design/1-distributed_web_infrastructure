@@ -1,0 +1,28 @@
+                    User
+                      |
+                 [Internet]
+                      |
+              DNS Server
+                      |
+                      V
+       Domain Name: foobar.com
+   (www record: Load Balancer IP)
+                      |
+                      V
+    Load Balancer (HAproxy)
+     (Distribution Algorithm)
+                      |
+         -------------------------
+         |                       |
+    Nginx Web Server     Application Server
+         |                       |
+    (Application Files)      (Code Base)
+         |                       |
+         -------------------------
+                      |
+           MySQL Database Cluster
+        (Primary-Replica setup)
+                      |
+         -------------------------
+         |                       |
+     Replica Node         Replica Node

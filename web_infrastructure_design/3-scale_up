@@ -1,0 +1,29 @@
+                              User
+                                |
+                           [Internet]
+                                |
+                          DNS Server
+                                |
+                                V
+              Domain Name: example.com
+             (www record: Load Balancer IP)
+                                |
+                                V
+           Load Balancer (HAproxy)
+       (Clustered with another Load Balancer)
+                                |
+               -----------------------------
+               |                           |
+           Web Server 1               Web Server 2
+              |                           |
+           (Nginx)                      (Nginx)
+              |                           |
+             /                             \
+         /                                   \
+    Application Server 1              Application Server 2
+            |                             |
+        (Code Base)                  (Code Base)
+            |                             |
+    -------------                 -------------
+    |           |                 |           |
+  Database 1  Database 2      Database 3  Database 4

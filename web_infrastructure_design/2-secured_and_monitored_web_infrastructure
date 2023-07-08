@@ -1,0 +1,29 @@
+                       User
+                         |
+                    [Internet]
+                         |
+                DNS Server
+                         |
+                         V
+      Domain Name: foobar.com
+  (www record: Load Balancer IP)
+                         |
+                         V
+           Firewall (WAF)
+               |    |    |
+           Firewall Firewall Firewall
+            |       |       |
+     ------------ ------------ ------------
+     |          | |          | |          |
+   Web Server  Web Server  Web Server  (SSL Certificate)
+     |          |          |        (HTTPS Enabled)
+   (Nginx)    (Nginx)    (Nginx)
+     |          |          |
+  Application Application Application
+   Server      Server     Server
+     |          |          |
+   MySQL      MySQL      MySQL
+   Database   Database   Database
+                         |
+          Monitoring Clients
+          (Data Collectors)
